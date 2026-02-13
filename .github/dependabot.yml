@@ -1,0 +1,21 @@
+version: 2
+updates:
+  # NPM / Yarn / PNPM (בפועל לפרויקט Vue לרוב npm או yarn)
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+
+  # GitHub Actions dependencies (אם יש workflows)
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
